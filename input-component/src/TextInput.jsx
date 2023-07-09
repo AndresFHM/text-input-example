@@ -1,13 +1,8 @@
-export function TextInput({ labelText, onChange, value }) {
+export function TextInput({ labelText, inputProps}) {
     return (
         <div>
             <label htmlFor="name">{labelText}:</label>
-            <input
-                type="text"
-                placeholder=""
-                onChange={onChange}
-            value={value}
-            />
+            <input type="text" {...inputProps} />
         </div>
     )
 }

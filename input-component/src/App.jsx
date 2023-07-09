@@ -29,36 +29,60 @@ function App() {
       }}>
         <h3>Information form</h3>
         <TextInput
-          onChange={(e) => {
-          setNameInput(e.target.value);      
+          //prop spreading, setting up inputProps as an object with key value pairs, placeholder is not a prop, but
+          // this act of creating another attribute is spreading props
+          inputProps={{
+            onChange: (e) => {
+              setNameInput(e.target.value);
+              },
+            value: nameInput, 
+            placeholder: "Jon Snow"
           }}
-          value={nameInput}
           labelText={"Name"}
         />
         <TextInput
-          onChange={(e) => {
-          setAgeInput(e.target.value);      
+          inputProps={{
+            onChange: (e) => {
+              setAgeInput(e.target.value);
+              },
+            value: ageInput, 
+            placeholder: "16"
           }}
-          value={ageInput}
           labelText={"Age"}
         />
         <TextInput
-          onChange={(e) => {
-          setSloganInput(e.target.value);      
+          inputProps={{
+            onChange: (e) => {
+              setSloganInput(e.target.value);
+              },
+            value: sloganInput, 
+            placeholder: "I know nothing"
           }}
-          value={sloganInput}
           labelText={"Slogan"}
         />
         {/* <div>
-          <label htmlFor="name">Name:</label>
-          <input type="text"
-            placeholder="andres hernandez"
-            onChange={(e) => {
-              setNameInput(e.target.value);
-            }}
-            value={nameInput}
-          />
+          <label htmlFor="age">Age:</label>
+            <input
+              type="text"
+              placeholder="17"
+              onChange={(e) => {
+                setAgeInput(e.target.value);
+              }}
+              value={ageInput}
+            />
+        </div>
+        <div>
+          <label htmlFor="name">Slogan:</label>
+              <input
+              type="text"
+              placeholder="love to kick butt and take names"
+              onChange={(e) => {
+                setSloganInput(e.target.value);
+                  }}
+              value={sloganInput}
+            />
         </div> */}
+        <input type="submit" value="Submit" />
       </form>
 
     </>
